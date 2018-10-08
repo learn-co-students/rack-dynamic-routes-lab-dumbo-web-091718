@@ -3,6 +3,7 @@ class Application
   @@items = Array.new.push(self)
 
   def call(env)
+
      res = Rack::Response.new
      req = Rack::Request.new(env)
 
@@ -19,9 +20,9 @@ class Application
          res.status = 404
        end
         res.finish
-#     # 1. Your application should only accept the `/items/<ITEM NAME>` route. Everything else should `404`
-#     # 2. If a user requests `/items/<Item Name>` it should return the price of that item
-#     # 3. IF a user requests an item that you don't have, then return a `400` and an error message
+#   1. Your application should only accept the `/items/<ITEM NAME>` route. Everything else should `404`
+#   2. If a user requests `/items/<Item Name>` it should return the price of that item
+#   3. IF a user requests an item that you don't have, then return a `400` and an error message
 
   end #call
 end
